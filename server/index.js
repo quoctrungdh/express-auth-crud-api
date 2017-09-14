@@ -2,8 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+const { checkAuthentication } = require('./auth.js');
+
 const index = require('./routers/');
 const login = require('./routers/login.js');
+const list = require('./routers/list.js');
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -14,5 +17,9 @@ app.use(bodyParser.json());
 
 app.use('/', index);
 app.use('/login', login);
+
+app.use(checkAuthentication);
+
+app.use('/list', list);
 
 app.listen(port);
