@@ -14,6 +14,7 @@ const RESPONSE_MESSAGE = {
   ERR_AUTH_000: 'Authentication failed. Username or password not provided',
   ERR_AUTH_001: 'Authentication failed. Username or password not corect',
   OK_AUTH_000: 'Authentication success',
+  OK_REGISTER_000: 'Registration success',
 };
 
 module.exports = {
